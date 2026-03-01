@@ -16,8 +16,8 @@
                     role="listitem"
                 >
                     @include('components.course-card', [
-                        'course'         => $course,
-                        'modalityColors' => $modalityColors,
+                        'course'     => $course,
+                        'badgeColor' => $modalityColors[$course['modality']] ?? '',
                     ])
                 </div>
             @endforeach

@@ -1,6 +1,6 @@
 @props([
-    'course'         => [],
-    'modalityColors' => [],
+    'course'     => [],
+    'badgeColor' => '',
 ])
 
 <article class="c-card" role="listitem">
@@ -13,8 +13,8 @@
             loading="lazy"
         />
         <span
-            class="c-card__badge c-card__badge--{{ Str::slug($course['modality']) }}"
-            style="background-color: {{ $modalityColors[$course['modality']] ?? '#704EFD' }}"
+            class="c-card__badge"
+            style="background-color: {{ $badgeColor }}"
         >
             {{ $course['modality'] }}
         </span>
