@@ -5,7 +5,8 @@
   font-family $font-heading
   border-radius $radius-btn
   cursor pointer
-  transition all 0.2s ease
+  // Explicit properties — avoid `all` to prevent unintended transitions
+  transition background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease
   border 2px solid transparent
   font-weight 600
   text-decoration none
@@ -50,6 +51,7 @@
     cursor not-allowed
     pointer-events none
 
-  // Active microinteraction
+  // Active microinteraction — snap in immediately, ease out on release
   &:active
     transform scale(0.98)
+    transition-duration 0.05s

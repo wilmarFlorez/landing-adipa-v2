@@ -1,6 +1,9 @@
 .s-contact
-  padding 80px 0
+  padding 60px 0 // mobile
   background $color-white
+
+  +respond-to('tablet')
+    padding 80px 0
 
   &__layout
     display grid
