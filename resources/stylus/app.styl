@@ -1,7 +1,9 @@
-// Entry point — importa los parciales en orden
+// Entry point — @require partials in order
+// Utils must come first so variables and mixins are available to all other files
+@require 'utils/variables'
+@require 'utils/mixins'
+
 // @require 'base/reset'
 // @require 'base/typography'
-// @require 'utils/variables'
-// @require 'utils/mixins'
 // @require 'components/buttons'
 // @require 'sections/hero'
