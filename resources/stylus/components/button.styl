@@ -1,0 +1,55 @@
+.c-btn
+  display inline-flex
+  align-items center
+  justify-content center
+  font-family $font-heading
+  border-radius $radius-btn
+  cursor pointer
+  transition all 0.2s ease
+  border 2px solid transparent
+  font-weight 600
+  text-decoration none
+  white-space nowrap
+
+  // Variant modifiers
+  &--primary
+    background $color-primary
+    color $color-white
+    &:hover
+      background darken($color-primary, 10%)
+
+  &--secondary
+    background $color-secondary
+    color $color-white
+    &:hover
+      background darken($color-secondary, 10%)
+
+  &--outline
+    background transparent
+    border-color $color-primary
+    color $color-primary
+    &:hover
+      background rgba($color-primary, 0.08)
+
+  // Size modifiers
+  &--sm
+    padding 8px 16px
+    font-size 0.875rem
+
+  &--md
+    padding 12px 24px
+    font-size 1rem
+
+  &--lg
+    padding 16px 32px
+    font-size 1.125rem
+
+  // Disabled state
+  &:disabled
+    opacity 0.6
+    cursor not-allowed
+    pointer-events none
+
+  // Active microinteraction
+  &:active
+    transform scale(0.98)
