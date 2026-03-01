@@ -18,7 +18,11 @@ yarn-error.log
 /.idea
 /.vscode
 
-# Build outputs
+# Build outputs (Gulp compiled assets)
+/public/css/app.css
+/public/css/*.map
+/public/js/app.js
+/public/js/*.map
 /public/css/build
 /public/js/build
 /public/images
