@@ -25,7 +25,6 @@ yarn-error.log
 /public/js/*.map
 /public/css/build
 /public/js/build
-/public/images
 
 # OS files
 *.DS_Store
