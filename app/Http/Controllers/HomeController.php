@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\CoursesData;
+
 class HomeController extends Controller
 {
     /**
@@ -9,9 +11,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $courses = [];
-        $categories = [];
+        $courses    = CoursesData::getCourses();
+        $categories = CoursesData::getCategories();
 
-        return view('home', compact('courses', 'categories'));
+        $modalityColors = [
+            'Online'      => '#2CB7FF',
+            'En Vivo'     => '#704EFD',
+            'Presencial'  => '#FFA927',
+        ];
+
+        return view('home', compact('courses', 'categories', 'modalityColors'));
     }
 }
