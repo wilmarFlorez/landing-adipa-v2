@@ -1,0 +1,11 @@
+// .container — BEM block, centers and constrains page content
+.container
+  max-width $container-max-width
+  margin 0 auto
+  padding 0 $padding-global
+
+  +respond-to('tablet')
+    padding 0 40px
+
+  +respond-to('desktop')
+    padding 0 60px
