@@ -16,6 +16,8 @@
 </head>
 <body>
 
+    <a class="u-skip-link" href="#main-content">Saltar al contenido principal</a>
+
     @include('partials.header')
 
     <main id="main-content" role="main">

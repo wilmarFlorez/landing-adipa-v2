@@ -13,6 +13,7 @@
                 <div
                     class="s-courses__item"
                     data-category="{{ $course['category_slug'] }}"
+                    role="listitem"
                 >
                     @include('components.course-card', [
                         'course'         => $course,

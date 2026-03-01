@@ -2,7 +2,7 @@
     <div class="container">
         <div class="l-header__inner">
 
-            <a class="l-header__logo" href="/">ADIPA</a>
+            <a class="l-header__logo" href="/" aria-label="ADIPA - Inicio">ADIPA</a>
 
             <nav class="l-header__nav" role="navigation" aria-label="Navegación principal">
                 <ul class="l-header__nav-list" id="nav-menu">
