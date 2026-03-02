@@ -24,9 +24,7 @@ Exact versions used during development:
 
 ## Screenshots
 
-| Desktop (1280px+) | Tablet (768px) | Mobile (375px) |
-|---|---|---|
-| _pending_ | _pending_ | _pending_ |
+<img width="2767" height="1821" alt="image" src="https://github.com/user-attachments/assets/f2d3e123-a4bc-4fd5-b737-eb6392279f04" />
 
 ## Installation
 
