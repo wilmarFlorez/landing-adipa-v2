@@ -1,6 +1,9 @@
-// Media query helper — min-width (mobile-first), accepts 'tablet' or 'desktop'
+// Media query helper — min-width (mobile-first), accepts 'sm', 'tablet' or 'desktop'
 respond-to(breakpoint)
-  if breakpoint == 'tablet'
+  if breakpoint == 'sm'
+    @media (min-width: $bp-sm)
+      {block}
+  else if breakpoint == 'tablet'
     @media (min-width: $bp-tablet)
       {block}
   else if breakpoint == 'desktop'
