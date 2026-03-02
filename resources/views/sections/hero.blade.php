@@ -15,6 +15,7 @@
                 <x-button variant="outline" size="lg" text="Ver diplomados" class="s-hero__btn-outline" />
             </div>
 
+
         </div>
     </div>
 </section>

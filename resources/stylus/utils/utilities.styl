@@ -39,6 +39,20 @@
   border 0
 
 
+// ── Scroll-triggered entrance animation ───────────────────────────────────────
+// Added to elements in HTML; JS (IntersectionObserver) adds .is-visible when
+// the element enters the viewport. prefers-reduced-motion is handled both here
+// (transition collapses via accessibility.styl) and in scroll-animations.js.
+.js-animate-on-scroll
+  opacity 0
+  transform translateY(30px)
+  transition opacity 500ms ease, transform 500ms ease
+
+  &.is-visible
+    opacity 1
+    transform translateY(0)
+
+
 // ── Text alignment ────────────────────────────────────────────────────────────
 .u-text-center
   text-align center

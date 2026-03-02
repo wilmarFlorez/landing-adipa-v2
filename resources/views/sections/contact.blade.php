@@ -3,7 +3,7 @@
         <div class="s-contact__layout">
 
             {{-- Contact info column --}}
-            <div class="s-contact__info">
+            <div class="s-contact__info js-animate-on-scroll">
                 <h2 id="contact-title">¿Tienes alguna consulta?</h2>
                 <p class="s-contact__description">
                     Nuestro equipo está disponible para responder tus preguntas
@@ -34,7 +34,7 @@
             </div>
 
             {{-- Form column --}}
-            <div class="s-contact__form-wrapper">
+            <div class="s-contact__form-wrapper js-animate-on-scroll">
 
                 <form class="c-form" id="contact-form" novalidate>
 

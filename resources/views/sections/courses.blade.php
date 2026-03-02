@@ -11,7 +11,7 @@
         <div class="s-courses__grid" role="list" id="courses-grid">
             @foreach($courses as $course)
                 <div
-                    class="s-courses__item"
+                    class="s-courses__item js-animate-on-scroll"
                     data-category="{{ $course['category_slug'] }}"
                     role="listitem"
                 >

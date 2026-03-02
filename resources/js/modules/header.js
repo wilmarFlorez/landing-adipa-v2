@@ -41,8 +41,20 @@
       }
     }
 
-    // Close menu when a nav link is clicked (smooth scroll navigation)
-    function handleNavLinkClick() {
+    // Smooth scroll to anchor and close menu when a nav link is clicked
+    function handleNavLinkClick(e) {
+      var href = $(this).attr('href');
+
+      if (href && href.charAt(0) === '#') {
+        var $target = $(href);
+
+        if ($target.length) {
+          e.preventDefault();
+          var scrollTop = $target.offset().top - $header.outerHeight();
+          $('html, body').animate({ scrollTop: scrollTop }, 400);
+        }
+      }
+
       closeMenu();
     }
 
