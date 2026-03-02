@@ -1,66 +1,220 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ADIPA — Catálogo de Cursos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Landing page de catálogo de formación continua en psicología y salud mental.
 
-## About Laravel
+![PHP](https://img.shields.io/badge/PHP-8.3.6-777BB4?logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-10.50.2-FF2D20?logo=laravel&logoColor=white)
+![Node](https://img.shields.io/badge/Node.js-24.13.1-339933?logo=node.js&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos Previos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Versiones exactas utilizadas durante el desarrollo:
 
-## Learning Laravel
+| Herramienta | Versión | Enlace |
+|---|---|---|
+| PHP | 8.3.6 | [php.net](https://www.php.net/downloads) |
+| Composer | 2.9.5 | [getcomposer.org](https://getcomposer.org) |
+| Node.js | 24.13.1 | [nodejs.org](https://nodejs.org) |
+| pnpm | 10.30.3 | [pnpm.io](https://pnpm.io/installation) |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clonar el repositorio:
 
-## Laravel Sponsors
+```bash
+git clone git@github.com:wilmarFlorez/landing-adipa-v2.git
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Ingresar al directorio:
 
-### Premium Partners
+```bash
+cd landing-adipa-v2
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. Instalar dependencias PHP:
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Instalar dependencias Node:
 
-## Code of Conduct
+```bash
+pnpm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Copiar las variables de entorno:
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. Generar la clave de la aplicación:
 
-## License
+```bash
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Una vez completados estos pasos, abrir dos terminales:
+
+- Terminal 1 — servidor PHP: `php artisan serve`
+- Terminal 2 — compilación con watcher: `pnpm dev`
+
+La aplicación estará disponible en `http://localhost:3000` (browser-sync con recarga automática) o directamente en `http://localhost:8000`.
+
+---
+
+## Comandos
+
+| Comando | Descripción | Cuándo usarlo |
+|---|---|---|
+| `php artisan serve` | Inicia el servidor de desarrollo en `localhost:8000` | Siempre, antes de `pnpm dev` |
+| `pnpm dev` | Compila Stylus + JS con watcher y lanza browser-sync | Desarrollo diario |
+| `pnpm build` | Compila y minifica CSS + JS para producción | Antes de hacer deploy |
+| `pnpm format` | Formatea JS, Stylus y Blade con Prettier | Antes de commitear |
+| `vendor/bin/php-cs-fixer fix` | Formatea archivos PHP con PSR-12 | Antes de commitear PHP |
+| `php artisan test` | Ejecuta la suite de tests | Verificación antes de commit |
+
+---
+
+## Estructura del Proyecto
+
+```
+landing-adipa-v2/
+│
+├── app/
+│   ├── Data/
+│   │   └── CoursesData.php          # Data estática: cursos, categorías y colores de modalidad
+│   ├── Helpers/
+│   │   └── FormatHelper.php         # formatPrice() y formatDate() — helpers puros sin estado
+│   └── Http/Controllers/
+│       └── HomeController.php       # Único controlador; orquesta Data y retorna la vista
+│
+├── resources/
+│   ├── views/
+│   │   ├── layouts/
+│   │   │   └── app.blade.php        # Shell HTML: meta SEO, Open Graph, skip link, assets
+│   │   ├── partials/
+│   │   │   ├── header.blade.php     # Sticky header con nav responsive y burger menu
+│   │   │   └── footer.blade.php     # Footer 4 columnas: brand, nav, social, contacto
+│   │   ├── sections/
+│   │   │   ├── hero.blade.php       # Hero con gradiente y CTAs
+│   │   │   ├── courses.blade.php    # Grid de cursos con filtrado client-side
+│   │   │   ├── category-filter.blade.php  # Pills de filtro con aria-pressed
+│   │   │   └── contact.blade.php    # Formulario de contacto con validación jQuery
+│   │   ├── components/
+│   │   │   ├── button.blade.php     # <x-button> con variantes (primary/secondary/outline)
+│   │   │   └── course-card.blade.php      # <article> con imagen, badge de modalidad y precio
+│   │   └── home.blade.php           # Vista principal: extiende layout, incluye secciones
+│   │
+│   ├── stylus/
+│   │   ├── app.styl                 # Entry point: define el orden de @require
+│   │   ├── utils/
+│   │   │   ├── variables.styl       # Design tokens: colores, tipografía, radii, sombras
+│   │   │   ├── mixins.styl          # respond-to(), respond-below(), dark-bg-link(), flex-center()
+│   │   │   └── utilities.styl       # .u-skip-link, .u-sr-only, .u-text-*
+│   │   ├── base/
+│   │   │   ├── reset.styl           # Box-sizing, reset de márgenes, overflow-x hidden
+│   │   │   ├── typography.styl      # Escala tipográfica h1–h4 y párrafos
+│   │   │   ├── base.styl            # Estilos globales de body
+│   │   │   └── accessibility.styl   # :focus-visible, prefers-reduced-motion
+│   │   ├── components/
+│   │   │   ├── container.styl       # .container con padding responsive
+│   │   │   ├── button.styl          # .c-btn con variantes y microinteracción :active
+│   │   │   ├── course-card.styl     # .c-card con hover translateY y animación fadeInUp
+│   │   │   └── form.styl            # .c-form con estados error/valid/success
+│   │   └── sections/
+│   │       ├── header.styl          # .l-header sticky con burger animation
+│   │       ├── hero.styl            # .s-hero con gradiente y escala tipográfica responsive
+│   │       ├── courses.styl         # .s-courses grid 1→2→3 cols + @keyframes fadeInUp
+│   │       ├── contact.styl         # .s-contact layout de dos columnas
+│   │       └── footer.styl          # .l-footer grid 1→2→4 cols
+│   │
+│   └── js/
+│       ├── vendor/
+│       │   └── jquery.min.js        # jQuery 4 — va primero en el bundle
+│       ├── modules/
+│       │   ├── header.js            # Scroll shadow, burger toggle, outside-click close
+│       │   ├── course-filter.js     # Filtrado client-side por categoría con aria-pressed
+│       │   └── contact-form.js      # Validación lazy (blur + input), submit simulado
+│       └── app.js                   # Entry point de inicialización
+│
+├── public/
+│   ├── css/app.css                  # CSS compilado — no editar directamente
+│   ├── js/app.js                    # JS concatenado y minificado — no editar directamente
+│   ├── images/
+│   │   └── og-adipa.svg             # Plantilla OG 1200×630 (exportar a .png para prod)
+│   └── robots.txt
+│
+├── gulpfile.cjs                     # Pipeline: stylesProd/Dev, scriptsProd/Dev, serve, watch
+├── .prettierrc                      # Prettier: single quotes, 2 espacios, blade plugin
+└── .php-cs-fixer.php                # php-cs-fixer: PSR-12, short arrays, trailing commas
+```
+
+---
+
+## Decisiones Técnicas
+
+**Data estática en lugar de Eloquent.** La landing es contenido de marketing con actualizaciones infrecuentes. Usar `CoursesData` — una clase PHP con arrays estáticos — elimina la dependencia de base de datos, simplifica el entorno de desarrollo y hace que el deploy sea trivial. Cuando el catálogo crezca hasta requerir un CMS o CRUD, basta con reemplazar las llamadas estáticas por un repositorio Eloquent sin tocar las vistas ni el controlador.
+
+**Convención de prefijos BEM.** Todo selector tiene un prefijo que indica su rol: `l-` para bloques de layout (header, footer), `s-` para secciones de página (hero, courses, contact), `c-` para componentes reutilizables (button, card, form, filter pills) y `u-` para utilidades de propósito general (skip link, sr-only, alineación). Esto elimina colisiones de nombres y hace que el origen de cualquier regla sea inmediatamente identificable en DevTools sin buscar en el código fuente.
+
+**Módulos jQuery separados por responsabilidad.** Cada módulo (`header.js`, `course-filter.js`, `contact-form.js`) encapsula exactamente una funcionalidad usando el patrón IIFE `(function($){...})(jQuery)`. Esto previene la contaminación del scope global y permite razonar sobre cada comportamiento de forma aislada. Gulp concatena los módulos en orden fijo — vendor → modules → app.js — generando un único request HTTP en producción.
+
+**Pipeline Gulp: Stylus → CSS.** El punto de entrada `app.styl` define el orden de `@require` explícitamente: variables y mixins primero (para que estén disponibles en todos los demás archivos), seguidos de utilities, base, components y sections. En desarrollo, `gulp-sourcemaps` genera mapas que permiten depurar directamente los archivos `.styl` en DevTools. En producción, la salida se comprime y los mapas se omiten. El mismo patrón aplica para JS con `gulp-uglify`.
+
+---
+
+## Screenshots
+
+> Añadir capturas antes de la entrega final.
+
+| Desktop (1280px+) | Tablet (768px) | Mobile (375px) |
+|---|---|---|
+| _pendiente_ | _pendiente_ | _pendiente_ |
+
+---
+
+## Deploy
+
+**URL de producción:** `https://adipa-cursos.tu-hosting.com` _(actualizar antes de entregar)_
+
+### Pasos para deploy en servidor propio
+
+1. Compilar assets para producción:
+
+```bash
+pnpm build
+```
+
+2. Instalar dependencias PHP sin paquetes de desarrollo:
+
+```bash
+composer install --no-dev --optimize-autoloader
+```
+
+3. Configurar variables de entorno en el servidor (copiar `.env.example`, completar `APP_KEY`, `APP_ENV=production`, `APP_DEBUG=false`).
+
+4. Cachear configuración y rutas:
+
+```bash
+php artisan config:cache && php artisan route:cache
+```
+
+5. Apuntar el document root del servidor web (Apache/Nginx) a la carpeta `public/`.
+
+> **OG image:** `public/images/og-adipa.svg` es la plantilla de diseño. Antes del deploy, exportarla como PNG de 1200×630 y guardarlo en `public/images/og-adipa.png` para máxima compatibilidad con redes sociales.
+
+---
+
+## Autor
+
+**Wilmar Flórez**
+
+- GitHub: [github.com/wilmarFlorez](https://github.com/wilmarFlorez)
+- LinkedIn: _[añadir enlace antes de entregar]_
