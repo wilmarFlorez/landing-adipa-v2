@@ -1,6 +1,6 @@
-// Entry point — inicialización principal
-// jQuery ya está disponible (cargado desde vendor/jquery.min.js)
-// Los módulos en modules/ se concatenan antes de este archivo
+// Entry point — main initialization
+// jQuery is available as a global (loaded from vendor/jquery.min.js)
+// Modules in modules/ are concatenated before this file by Gulp
 
 (function ($) {
   'use strict';
