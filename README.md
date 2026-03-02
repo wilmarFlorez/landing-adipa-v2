@@ -86,74 +86,31 @@ La aplicación estará disponible en `http://localhost:3000` (browser-sync con r
 
 ```
 landing-adipa-v2/
-│
 ├── app/
-│   ├── Data/
-│   │   └── CoursesData.php          # Data estática: cursos, categorías y colores de modalidad
-│   ├── Helpers/
-│   │   └── FormatHelper.php         # formatPrice() y formatDate() — helpers puros sin estado
+│   ├── Data/CoursesData.php         # Static data: courses, categories, modality colors
+│   ├── Helpers/FormatHelper.php     # formatPrice() and formatDate() — pure helpers
 │   └── Http/Controllers/
-│       └── HomeController.php       # Único controlador; orquesta Data y retorna la vista
-│
+│       └── HomeController.php       # Single controller: assembles data and returns view
 ├── resources/
 │   ├── views/
-│   │   ├── layouts/
-│   │   │   └── app.blade.php        # Shell HTML: meta SEO, Open Graph, skip link, assets
-│   │   ├── partials/
-│   │   │   ├── header.blade.php     # Sticky header con nav responsive y burger menu
-│   │   │   └── footer.blade.php     # Footer 4 columnas: brand, nav, social, contacto
-│   │   ├── sections/
-│   │   │   ├── hero.blade.php       # Hero con gradiente y CTAs
-│   │   │   ├── courses.blade.php    # Grid de cursos con filtrado client-side
-│   │   │   ├── category-filter.blade.php  # Pills de filtro con aria-pressed
-│   │   │   └── contact.blade.php    # Formulario de contacto con validación jQuery
-│   │   ├── components/
-│   │   │   ├── button.blade.php     # <x-button> con variantes (primary/secondary/outline)
-│   │   │   └── course-card.blade.php      # <article> con imagen, badge de modalidad y precio
-│   │   └── home.blade.php           # Vista principal: extiende layout, incluye secciones
-│   │
+│   │   ├── layouts/app.blade.php    # HTML shell: SEO meta, Open Graph, skip link, assets
+│   │   ├── partials/                # Header (sticky, burger menu) and Footer
+│   │   ├── sections/                # Hero, Courses grid, CategoryFilter pills, Contact form
+│   │   └── components/              # Blade components: <x-button>, <x-course-card>
 │   ├── stylus/
-│   │   ├── app.styl                 # Entry point: define el orden de @require
-│   │   ├── utils/
-│   │   │   ├── variables.styl       # Design tokens: colores, tipografía, radii, sombras
-│   │   │   ├── mixins.styl          # respond-to(), respond-below(), dark-bg-link(), flex-center()
-│   │   │   └── utilities.styl       # .u-skip-link, .u-sr-only, .u-text-*
-│   │   ├── base/
-│   │   │   ├── reset.styl           # Box-sizing, reset de márgenes, overflow-x hidden
-│   │   │   ├── typography.styl      # Escala tipográfica h1–h4 y párrafos
-│   │   │   ├── base.styl            # Estilos globales de body
-│   │   │   └── accessibility.styl   # :focus-visible, prefers-reduced-motion
-│   │   ├── components/
-│   │   │   ├── container.styl       # .container con padding responsive
-│   │   │   ├── button.styl          # .c-btn con variantes y microinteracción :active
-│   │   │   ├── course-card.styl     # .c-card con hover translateY y animación fadeInUp
-│   │   │   └── form.styl            # .c-form con estados error/valid/success
-│   │   └── sections/
-│   │       ├── header.styl          # .l-header sticky con burger animation
-│   │       ├── hero.styl            # .s-hero con gradiente y escala tipográfica responsive
-│   │       ├── courses.styl         # .s-courses grid 1→2→3 cols + @keyframes fadeInUp
-│   │       ├── contact.styl         # .s-contact layout de dos columnas
-│   │       └── footer.styl          # .l-footer grid 1→2→4 cols
-│   │
+│   │   ├── app.styl                 # Entry point: explicit @require order
+│   │   ├── utils/                   # Design tokens, mixins, utility classes
+│   │   ├── base/                    # Reset, typography, body, accessibility
+│   │   ├── components/              # .c-btn, .c-card, .c-form, .container
+│   │   └── sections/                # .l-header, .s-hero, .s-courses, .s-contact, .l-footer
 │   └── js/
-│       ├── vendor/
-│       │   └── jquery.min.js        # jQuery 4 — va primero en el bundle
-│       ├── modules/
-│       │   ├── header.js            # Scroll shadow, burger toggle, outside-click close
-│       │   ├── course-filter.js     # Filtrado client-side por categoría con aria-pressed
-│       │   └── contact-form.js      # Validación lazy (blur + input), submit simulado
-│       └── app.js                   # Entry point de inicialización
-│
-├── public/
-│   ├── css/app.css                  # CSS compilado — no editar directamente
-│   ├── js/app.js                    # JS concatenado y minificado — no editar directamente
-│   ├── images/
-│   │   └── og-adipa.svg             # Plantilla OG 1200×630 (exportar a .png para prod)
-│   └── robots.txt
-│
-├── gulpfile.cjs                     # Pipeline: stylesProd/Dev, scriptsProd/Dev, serve, watch
-├── .prettierrc                      # Prettier: single quotes, 2 espacios, blade plugin
-└── .php-cs-fixer.php                # php-cs-fixer: PSR-12, short arrays, trailing commas
+│       ├── vendor/jquery.min.js     # jQuery 4 — concatenated first
+│       ├── modules/                 # header.js, course-filter.js, contact-form.js, scroll-animations.js
+│       └── app.js                   # Initialization entry point
+├── public/                          # Compiled CSS and JS (do not edit directly)
+├── gulpfile.cjs                     # Build pipeline: Stylus → CSS, JS concat/uglify, browser-sync
+├── .prettierrc                      # Prettier config: JS, Stylus and Blade
+└── .php-cs-fixer.php                # PSR-12 config for PHP files
 ```
 
 ---
