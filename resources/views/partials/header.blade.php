@@ -10,6 +10,9 @@
                     <li><a class="l-header__nav-link" href="#diplomados">Diplomados</a></li>
                     <li><a class="l-header__nav-link" href="#recursos">Recursos</a></li>
                     <li><a class="l-header__nav-link" href="#contacto">Contacto</a></li>
+                    <li class="l-header__nav-cta">
+                        <x-button variant="outline" size="sm" text="Iniciar Sesión" />
+                    </li>
                 </ul>
             </nav>
 

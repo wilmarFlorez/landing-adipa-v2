@@ -47,6 +47,10 @@
     align-items center
     gap 1rem
 
+  // CTA inside nav — hidden on desktop, shown at bottom of mobile menu
+  &__nav-cta
+    display none
+
   // Hamburger button — hidden on desktop, shown on mobile
   &__burger
     display none
@@ -79,15 +83,15 @@
       right 0
       background $color-white
       box-shadow $shadow-card
-      overflow hidden
-      max-height 0
-      transition max-height 0.35s ease, padding 0.35s ease
 
     &__nav-list
       flex-direction column
       align-items flex-start
       gap 0
       padding 0
+      overflow hidden
+      max-height 0
+      transition max-height 0.35s ease, padding 0.35s ease
 
       // Open state — toggled by JS
       &.is-open
@@ -104,6 +108,20 @@
 
     &__actions
       gap 0.5rem
+
+    // Hide desktop CTA — shown inside the nav list instead
+    &__actions .c-btn
+      display none
+
+    // Show CTA as last nav item — full width
+    &__nav-cta
+      display block
+      width 100%
+      padding 8px 20px 12px
+
+      .c-btn
+        width 100%
+        justify-content center
 
     // Burger → X animation when open (aria-expanded set by JS)
     // Max 2 BEM element levels: __burger → __burger-bar
