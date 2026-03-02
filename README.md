@@ -137,7 +137,7 @@ landing-adipa-v2/
 
 ## Deploy
 
-**URL de producción:** `https://adipa-cursos.tu-hosting.com` _(actualizar antes de entregar)_
+**URL de producción:** `https://landing-adipa-v2.onrender.com`
 
 ### Pasos para deploy en servidor propio
 
