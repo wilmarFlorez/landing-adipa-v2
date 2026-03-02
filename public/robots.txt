@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block internal Laravel routes from being indexed
+Disallow: /storage/
+Disallow: /_debugbar/
+
+Sitemap: https://adipa.cl/sitemap.xml

@@ -1,0 +1,5 @@
+vendor/
+node_modules/
+public/css/build/
+public/js/build/
+storage/

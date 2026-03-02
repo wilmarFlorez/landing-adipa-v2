@@ -1,0 +1,80 @@
+.c-form
+
+  &__group
+    margin-bottom 1.5rem
+
+  &__label
+    display block
+    font-family $font-heading
+    font-size 0.9375rem
+    font-weight 500
+    color $color-dark
+    margin-bottom 6px
+
+    span
+      color $color-error
+
+  &__input
+    width 100%
+    padding 12px 16px
+    border 2px solid $color-gray-border
+    border-radius 8px
+    font-family $font-body
+    font-size 1rem
+    color $color-dark
+    background $color-white
+    transition border-color 0.2s ease, box-shadow 0.2s ease
+    appearance none
+
+    &::placeholder
+      color $color-gray-muted
+
+    &:focus
+      border-color $color-primary
+      outline none
+      box-shadow 0 0 0 3px rgba($color-primary, 0.15)
+
+    // State modifiers — applied by JS
+    &--error
+      border-color $color-error
+
+      &:focus
+        box-shadow 0 0 0 3px rgba($color-error, 0.15)
+
+    &--valid
+      border-color $color-success
+
+      &:focus
+        box-shadow 0 0 0 3px rgba($color-success, 0.15)
+
+    // Textarea variant
+    &--textarea
+      resize vertical
+      min-height 130px
+
+  &__error
+    display block
+    font-size 0.8rem
+    color $color-error
+    margin-top 4px
+    min-height 1.2em
+    line-height 1.4
+
+  &__submit
+    width 100%
+    justify-content center
+
+  &__success
+    text-align center
+    padding 2.5rem 1.5rem
+    color $color-success-dark
+
+    svg
+      margin-bottom 1rem
+      color $color-success
+
+    p
+      font-family $font-heading
+      font-size 1.125rem
+      font-weight 600
+      color $color-success-dark

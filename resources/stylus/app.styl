@@ -1,0 +1,27 @@
+// Google Fonts must be the first CSS rule in the output (spec requirement)
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap')
+
+// Entry point — @require partials in order
+// Utils must come first so variables and mixins are available to all other files
+@require 'utils/variables'
+@require 'utils/mixins'
+@require 'utils/utilities'
+
+// Base
+@require 'base/reset'
+@require 'base/typography'
+@require 'base/base'
+@require 'base/accessibility'
+
+// Components
+@require 'components/container'
+@require 'components/button'
+@require 'components/course-card'
+@require 'components/form'
+
+// Sections
+@require 'sections/header'
+@require 'sections/hero'
+@require 'sections/courses'
+@require 'sections/contact'
+@require 'sections/footer'

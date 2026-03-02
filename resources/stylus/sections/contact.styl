@@ -1,0 +1,55 @@
+.s-contact
+  padding 60px 0 // mobile
+  background $color-white
+
+  +respond-to('tablet')
+    padding 80px 0
+
+  &__layout
+    display grid
+    grid-template-columns 1fr
+    gap 3rem
+
+    +respond-to('desktop')
+      grid-template-columns 2fr 3fr
+      align-items start
+
+  &__info
+    h2
+      color $color-dark
+      margin-bottom 1rem
+
+  &__description
+    color $color-gray-text
+    line-height 1.7
+    margin-bottom 2rem
+
+  &__details
+    display flex
+    flex-direction column
+    gap 1rem
+    list-style none
+
+  &__detail
+    display flex
+    align-items center
+    gap 0.75rem
+    color $color-dark
+    font-size 0.9375rem
+
+  &__detail-icon
+    flex-shrink 0
+    width 40px
+    height 40px
+    border-radius 50%
+    background $color-light-bg
+    flex-center()
+    color $color-primary
+
+  &__form-wrapper
+    background $color-light-bg-2
+    border-radius $radius-card
+    padding 2rem
+
+    +respond-to('desktop')
+      padding 2.5rem
