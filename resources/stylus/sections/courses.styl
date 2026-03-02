@@ -44,8 +44,9 @@
     +respond-to('desktop')
       grid-template-columns repeat(3, 1fr)
 
-  // Grid items — transition for filter toggle, animation for initial entrance
+  // Grid items — flex so .c-card stretches to match the tallest card in the row
   &__item
+    display flex
     transition opacity 0.3s ease
 
     // Staggered entrance animation — first 6 cards only, 80ms between each
