@@ -117,8 +117,6 @@ landing-adipa-v2/
 
 ## Decisiones Técnicas
 
-**Data estática en lugar de Eloquent.** La landing es contenido de marketing con actualizaciones infrecuentes. Usar `CoursesData` — una clase PHP con arrays estáticos — elimina la dependencia de base de datos, simplifica el entorno de desarrollo y hace que el deploy sea trivial. Cuando el catálogo crezca hasta requerir un CMS o CRUD, basta con reemplazar las llamadas estáticas por un repositorio Eloquent sin tocar las vistas ni el controlador.
-
 **Convención de prefijos BEM.** Todo selector tiene un prefijo que indica su rol: `l-` para bloques de layout (header, footer), `s-` para secciones de página (hero, courses, contact), `c-` para componentes reutilizables (button, card, form, filter pills) y `u-` para utilidades de propósito general (skip link, sr-only, alineación). Esto elimina colisiones de nombres y hace que el origen de cualquier regla sea inmediatamente identificable en DevTools sin buscar en el código fuente.
 
 **Módulos jQuery separados por responsabilidad.** Cada módulo (`header.js`, `course-filter.js`, `contact-form.js`) encapsula exactamente una funcionalidad usando el patrón IIFE `(function($){...})(jQuery)`. Esto previene la contaminación del scope global y permite razonar sobre cada comportamiento de forma aislada. Gulp concatena los módulos en orden fijo — vendor → modules → app.js — generando un único request HTTP en producción.
@@ -171,7 +169,9 @@ php artisan config:cache && php artisan route:cache
 
 ## Autor
 
-**Wilmar Flórez**
+**Wilmar Florez Samudio**
 
+- LinkedIn: [linkedin.com/in/wilmar-florez](https://linkedin.com/in/wilmar-florez)
 - GitHub: [github.com/wilmarFlorez](https://github.com/wilmarFlorez)
-- LinkedIn: _[añadir enlace antes de entregar]_
+
+Frontend technical assessment for ADIPA — 2026.
