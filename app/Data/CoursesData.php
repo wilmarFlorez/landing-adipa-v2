@@ -30,6 +30,21 @@ class CoursesData
         ];
     }
 
+    /**
+     * Badge background colors keyed by modality label.
+     * Values mirror the brand design tokens so the controller stays color-agnostic.
+     *
+     * @return array<string, string>
+     */
+    public static function getModalityColors(): array
+    {
+        return [
+            'Online'     => '#2CB7FF',   // $color-secondary
+            'En Vivo'    => '#704EFD',   // $color-primary
+            'Presencial' => '#FFA927',   // $color-orange
+        ];
+    }
+
     public static function getCourses(): array
     {
         return [

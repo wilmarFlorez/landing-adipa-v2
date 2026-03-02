@@ -11,14 +11,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $courses    = CoursesData::getCourses();
-        $categories = CoursesData::getCategories();
-
-        $modalityColors = [
-            'Online'      => '#2CB7FF',
-            'En Vivo'     => '#704EFD',
-            'Presencial'  => '#FFA927',
-        ];
+        $courses        = CoursesData::getCourses();
+        $categories     = CoursesData::getCategories();
+        $modalityColors = CoursesData::getModalityColors();
 
         return view('home', compact('courses', 'categories', 'modalityColors'));
     }
